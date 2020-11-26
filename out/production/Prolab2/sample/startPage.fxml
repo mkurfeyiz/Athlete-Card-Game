@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.StartPage"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <children>
+        <Label layoutX="283.0" layoutY="28.0" text="SPORCU KART OYUNU">
+            <font>
+                <Font name="Gill Sans MT Bold" size="28.0" />
+            </font>
+        </Label>
+        <Label layoutX="277.0" layoutY="177.0" text="Oyuncu Adı : ">
+            <font>
+                <Font name="Gill Sans MT" size="24.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="277.0" layoutY="300.0" text="Oyuncu ID : ">
+            <font>
+                <Font name="Gill Sans MT" size="24.0" />
+            </font>
+        </Label>
+        <TextField fx:id="playerName" layoutX="423.0" layoutY="179.0" />
+        <TextField fx:id="playerID" layoutX="423.0" layoutY="302.0" />
+        <Button layoutX="704.0" layoutY="542.0" mnemonicParsing="false" onAction="#startTheGame" prefHeight="50.0" prefWidth="162.0" text="OYUNA BAŞLA">
+            <font>
+                <Font name="Gill Sans MT" size="18.0" />
+            </font>
+        </Button>
+        <Button layoutX="355.0" layoutY="410.0" mnemonicParsing="false" onAction="#setPlayerInfos" prefHeight="41.0" prefWidth="191.0" text="BİLGİLERİ KAYDET">
+            <font>
+                <Font name="Gill Sans MT" size="18.0" />
+            </font>
+        </Button>
+
+    </children>
+
+
+
+</AnchorPane>

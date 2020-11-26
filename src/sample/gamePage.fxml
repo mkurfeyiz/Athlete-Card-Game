@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="620.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GamePage">
+   <children>
+      <Label layoutX="70.0" layoutY="160.0" text="Bilgisayarın Oynadığı Kart">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="220.0" text="Sporcunun Adı :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="_playerNameBot" layoutX="215.0" layoutY="220.0" text="playerNameLBL">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="270.0" text="Oynadığı Takım :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="_teamNameBot" layoutX="215.0" layoutY="270.0" text="playerTeamLbl">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="_abilityBot" layoutX="70.0" layoutY="330.0" text="comparedAbility :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="_abilityValueBot" layoutX="215.0" layoutY="330.0" text="abilityValueLbl">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
+
+
+      <Label layoutX="570.0" layoutY="160.0" text="Oyuncunun Oynadığı Kart">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="570.0" layoutY="220.0" text="Sporcunun Adı :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="_playerNamePlayer" layoutX="715.0" layoutY="220.0" text="playerNameLBL">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="570.0" layoutY="270.0" text="Oynadığı Takım :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="_teamNamePlayer" layoutX="715.0" layoutY="270.0" text="playerTeamLbl">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="_abilityPlayer" layoutX="570.0" layoutY="330.0" text="comparedAbility :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="_abilityValuePlayer" layoutX="715.0" layoutY="330.0" text="abilityValueLbl">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="312.0" layoutY="21.0" text="OYNANAN KARTLAR">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+
+      <Label fx:id="_nameBot" layoutX="70.0" layoutY="460.0" text="botNameLbl">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="520.0" text="Puan :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="_scoreBot" layoutX="140.0" layoutY="520.0" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="_namePlayer" layoutX="575.0" layoutY="460.0" text="playerNameLbl">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="575.0" layoutY="520.0" text="Puan :">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="_scorePlayer" layoutX="640.0" layoutY="520.0" text="0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
+   </children>
+</AnchorPane>
