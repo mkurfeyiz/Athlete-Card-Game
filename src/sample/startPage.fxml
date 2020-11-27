@@ -29,16 +29,16 @@
                 <Font name="Gill Sans MT" size="24.0" />
             </font>
         </Label>
-        <TextField fx:id="playerName" layoutX="423.0" layoutY="179.0" />
-        <TextField fx:id="playerID" layoutX="423.0" layoutY="302.0" />
-        <Button layoutX="704.0" layoutY="542.0" mnemonicParsing="false" onAction="#startTheGame" prefHeight="50.0" prefWidth="162.0" text="OYUNA BAŞLA">
+        <TextField fx:id="playerName" layoutX="423.0" layoutY="179.0" text="MK"/>
+        <TextField fx:id="playerID" layoutX="423.0" layoutY="302.0" text="22"/>
+        <Button layoutX="704.0" layoutY="542.0" mnemonicParsing="false" onAction="#startTheGame" prefHeight="40.0" prefWidth="140.0" text="OYUNA BAŞLA">
             <font>
-                <Font name="Gill Sans MT" size="18.0" />
+                <Font name="Gill Sans MT" size="16.0" />
             </font>
         </Button>
-        <Button layoutX="355.0" layoutY="410.0" mnemonicParsing="false" onAction="#setPlayerInfos" prefHeight="41.0" prefWidth="191.0" text="BİLGİLERİ KAYDET">
+        <Button layoutX="355.0" layoutY="410.0" mnemonicParsing="false" onAction="#setPlayerInfos" prefHeight="41.0" prefWidth="191.0" text="DEĞİŞİKLİKLERİ KAYDET">
             <font>
-                <Font name="Gill Sans MT" size="18.0" />
+                <Font name="Gill Sans MT" size="14.0" />
             </font>
         </Button>
 

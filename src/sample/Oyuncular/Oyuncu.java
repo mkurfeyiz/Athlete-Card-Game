@@ -22,7 +22,7 @@ public abstract class Oyuncu {
         this.score = score;
     }
 
-    public abstract Sporcu kartSec(int index,int counter);
+    public abstract Sporcu kartSec(int index,boolean turnFlag);
     public int getScore() {
         return this.score;
     }

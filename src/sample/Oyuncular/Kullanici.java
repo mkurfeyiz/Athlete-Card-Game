@@ -18,15 +18,15 @@ public class Kullanici extends Oyuncu{
 
 
     @Override
-    public Sporcu kartSec(int index, int counter) {
+    public Sporcu kartSec(int index, boolean turnFlag) {
         Sporcu temp=null;
-        if(counter % 2 == 0){
+        if(turnFlag){
             this.handF.get(index).setUsed(false);
             temp = this.handF.get(index);
             this.handF.remove(index);
 
-        } else if(counter % 2 == 1){
-            this.handB.get(index-1).setUsed(false);
+        } else {
+            this.handB.get(index).setUsed(false);
             temp = this.handB.get(index);
             this.handB.remove(index);
         }

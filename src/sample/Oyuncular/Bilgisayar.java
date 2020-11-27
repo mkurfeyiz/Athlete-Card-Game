@@ -21,15 +21,15 @@ public class Bilgisayar extends Oyuncu{
     }
 
     @Override
-    public Sporcu kartSec(int index,int counter) {
+    public Sporcu kartSec(int index,boolean turnFlag) {
         Sporcu temp = null;
-        if(counter % 2 == 0){
+        if(turnFlag){
             index = _random.nextInt(this.handF.size());
             this.handF.get(index).setUsed(false);
             temp = this.handF.get(index);
             this.handF.remove(index);
 
-        } else if(counter % 2 == 1){
+        } else {
             index = _random.nextInt(this.handB.size());
             this.handB.get(index).setUsed(false);
             temp = this.handB.get(index);

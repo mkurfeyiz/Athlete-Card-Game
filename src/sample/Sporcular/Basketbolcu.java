@@ -31,17 +31,42 @@ public class Basketbolcu extends Sporcu {
         return this.freeThrow;
     }
 
+    public void setPoint(int point) {
+        this.point = point;
+    }
+
+    public void setThreePointer(int threePointer) {
+        this.threePointer = threePointer;
+    }
+
+    public void setFreeThrow(int freeThrow) {
+        this.freeThrow = freeThrow;
+    }
 
     //Buralari alert ile gösterebilirim.
     @Override
     public void sporcuPuaniGoster() {
-        //Alert kullan
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Basketbolcu Bilgisi");
-        alert.setHeaderText(null);
-        alert.setContentText(this.name + " "+this.teamName+"\n"+"İkilik : "+this.point+" \nÜçlük : "+this.threePointer+" \nSerbest Atış : "+this.freeThrow);
 
-        alert.showAndWait();
+        System.out.println("Oyuncunun Adı : "+this.name + "\nTakımı : "+this.teamName+"\n"+"İkilik : "+this.point+" \nÜçlük : "+this.threePointer+" \nSerbest Atış : "+this.freeThrow);
+
+    }
+
+    @Override
+    public int getPenalty() {
+        int i = 0;
+        return i;
+    }
+
+    @Override
+    public int getFreekick() {
+        int i = 0;
+        return i;
+    }
+
+    @Override
+    public int getFinishing() {
+        int i = 0;
+        return i;
     }
 
 }

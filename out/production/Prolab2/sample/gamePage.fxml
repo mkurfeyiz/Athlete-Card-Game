@@ -85,36 +85,69 @@
          </font>
       </Label>
 
-      <Label fx:id="_nameBot" layoutX="70.0" layoutY="460.0" text="botNameLbl">
+      <Label fx:id="_nameBot" layoutX="70.0" layoutY="400.0" text="botNameLbl">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="70.0" layoutY="520.0" text="Puan :">
+      <Label layoutX="70.0" layoutY="460.0" text="Puan :">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="_scoreBot" layoutX="140.0" layoutY="520.0" text="0">
+      <Label fx:id="_scoreBot" layoutX="140.0" layoutY="460.0" text="0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="_namePlayer" layoutX="575.0" layoutY="460.0" text="playerNameLbl">
+      <Label fx:id="_namePlayer" layoutX="575.0" layoutY="400.0" text="playerNameLbl">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="575.0" layoutY="520.0" text="Puan :">
+      <Label layoutX="575.0" layoutY="460.0" text="Puan :">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="_scorePlayer" layoutX="640.0" layoutY="520.0" text="0">
+      <Label fx:id="_scorePlayer" layoutX="640.0" layoutY="460.0" text="0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <Button layoutX="410.0" layoutY="570.0" mnemonicParsing="false" onAction="#startTurn" text="Turu Başlat" />
+
+      <Button layoutX="575.0" layoutY="540.0" mnemonicParsing="false" onAction="#setIndexOne" text="1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+
+      <Button layoutX="610.0" layoutY="540.0" mnemonicParsing="false" onAction="#setIndexTwo" text="2">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+
+      <Button layoutX="645.0" layoutY="540.0" mnemonicParsing="false" onAction="#setIndexThree" text="3">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+
+      <Button layoutX="680.0" layoutY="540.0" mnemonicParsing="false" onAction="#setIndexFour" text="4">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="575.0" layoutY="500.0" text="Oynamak istediğiniz kartın numarasını seçin">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Button layoutX="14.0" layoutY="570.0" mnemonicParsing="false" onAction="#showPlayerHand" text="Elde Kalan Kartları Göster" />
+
+
+
 
    </children>
 </AnchorPane>

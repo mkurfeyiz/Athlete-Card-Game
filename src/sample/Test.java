@@ -5,6 +5,7 @@ import sample.Sporcular.*;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Random;
 
 
 public class Test {
@@ -12,10 +13,12 @@ public class Test {
     //Oyunun ilerleyişi buradan takip edilmelidir.
     Bilgisayar _bot;
     Kullanici _player;
-    boolean flag,flagF,flagB;
+    boolean flag,flagTurn ; //flagTurn == true -> Futbol / flagTurn == false -> Basketbol
 
     ArrayList<Futbolcu> cardListF = new ArrayList<>(8);
     ArrayList<Basketbolcu> cardListB = new ArrayList<>(8);
+
+    String _ability;
 
     Test(Bilgisayar bot,Kullanici player){
 
@@ -23,6 +26,7 @@ public class Test {
         _player = player;
 
         setDeck(this.cardListF,this.cardListB);
+        setHand(bot,player);
 
         /*for (Futbolcu kart : cardListF) {//javada foreach
             System.out.println(kart.getName()+" "+kart.getTeamName());
@@ -54,6 +58,23 @@ public class Test {
 
     }
 
+    public void showPlayersHandF(Oyuncu player){
+        for(int i=0;i<player.getHandSizeF();i++){
+            System.out.println("Oyuncu Adı : "+player.getHandF().get(i).getName()+" / Bitiricilik : "
+                    +player.getHandF().get(i).getFinishing()
+            +" / Penaltı : "+player.getHandF().get(i).getPenalty()+" / Serbest Vuruş : "+player.getHandF().get(i).getFreekick());
+        }
+    }
+
+    public void showPlayersHandB(Oyuncu player){
+        for(int i=0;i< player.getHandSizeB();i++){
+            System.out.println("Oyuncu Adı : "+player.getHandB().get(i).getName()
+            +" İkilik : "+player.getHandB().get(i).getPoint()+" / Üçlük : "+player.getHandB().get(i).getThreePointer()
+            +" / Serbest Atış : "+player.getHandB().get(i).getFreeThrow());
+        }
+        System.out.println();
+    }
+
     public void setDeck(ArrayList<Futbolcu> cardListF,ArrayList<Basketbolcu> cardListB){
 
         //Adding players to list
@@ -62,17 +83,17 @@ public class Test {
         cardListF.add(new Futbolcu("Cristiano Ronaldo","Juventus",95,88,95));
         cardListF.add(new Futbolcu("Heung Min Son","Tottenham",87,80,90));
         cardListF.add(new Futbolcu("Robert Lewandowski","Bayern Münih",90,84,95));
-        cardListF.add(new Futbolcu("Mohamed Salah","Liverpool",79,80,93));
-        cardListF.add(new Futbolcu("Inaki Williams","Athletic Bilbao",37,40,54));
-        cardListF.add(new Futbolcu("Wissam Ben Yedder","Monaco",50,43,75));
-        cardListF.add(new Futbolcu("Richarlison","Everton",76,78,80));
+        cardListF.add(new Futbolcu("Mohamed Salah","Liverpool",79,80,90));
+        cardListF.add(new Futbolcu("Inaki Williams","Athletic Bilbao",37,40,55));
+        cardListF.add(new Futbolcu("Wissam Ben Yedder","Monaco",50,40,75));
+        cardListF.add(new Futbolcu("Richarlison","Everton",79,80,80));
         //Basketbolcular
         cardListB.add(new Basketbolcu("LeBron James","LA Lakers",90,80,95));
-        cardListB.add(new Basketbolcu("Stephen Curry","Golden State Warriors",87,95,90));
-        cardListB.add(new Basketbolcu("Jimmy Butler","Miami Heats",73,70,76));
-        cardListB.add(new Basketbolcu("Anthony Davies","LA Lakers",83,77,84));
+        cardListB.add(new Basketbolcu("Stephen Curry","Golden State Warriors",90,95,90));
+        cardListB.add(new Basketbolcu("Jimmy Butler","Miami Heats",75,77,75));
+        cardListB.add(new Basketbolcu("Anthony Davies","LA Lakers",85,77,84));
         cardListB.add(new Basketbolcu("James Harden","Houston Rockets",88,93,88));
-        cardListB.add(new Basketbolcu("Luka Doncic","Dallas Mavericks",86,79,85));
+        cardListB.add(new Basketbolcu("Luka Doncic","Dallas Mavericks",85,79,88));
         cardListB.add(new Basketbolcu("Nikola Jokic","LA Lakers",75,75,75));
         cardListB.add(new Basketbolcu("Kobe Bryant","LA Lakers",99,99,99));
 
@@ -98,6 +119,49 @@ public class Test {
         }
     }
 
+    public void setAbility(){
+        Random random = new Random();
+        int choice = random.nextInt(3);
+        if(this.flagTurn){
+            switch (choice){
+                case 0:
+                    _ability = "Bitiricilik";
+                    break;
+                case 1:
+                    _ability = "Serbest Vuruş";
+                    break;
+                case 2:
+                    _ability = "Penaltı";
+                    break;
+                default:
+                    System.out.println("Pozisyon seçilemedi :(");
+                    break;
+            }
+
+        } else {
+            switch (choice){
+                case 0:
+                    _ability = "İkilik";
+                    break;
+                case 1:
+
+                    _ability = "Üçlük";
+                    break;
+                case 2:
+
+                    _ability = "Serbest Atış";
+                    break;
+                default:
+                    System.out.println("Pozisyon seçilemedi :(");
+                    break;
+            }
+        }
+    }
+
+    public String getAbility() {
+        return _ability;
+    }
+
     public void getFutbolcuOz(Futbolcu f){
 
         System.out.println("Adı : "+f.getName());
@@ -118,16 +182,15 @@ public class Test {
         
     }
 
-    public void setPlayerType(int counter){
+    public boolean checkPlayerType(int counter){
         if(counter % 2 == 0){
-            System.out.println("Futbolcu Sırası");
-            flagF = true;
-            flagB = false;
+            //Futbol
+            flagTurn = true;
         } else {
-            System.out.println("Basketbolcu Sırası");
-            flagF = false;
-            flagB = true;
+            //Basketbol
+            flagTurn = false;
         }
+        return flagTurn;
     }
 
     public void setFlag(boolean flag) {

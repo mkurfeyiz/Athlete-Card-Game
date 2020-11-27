@@ -15,6 +15,14 @@ public abstract class Sporcu {
     }
 
     public abstract void sporcuPuaniGoster();
+    //Futbolcu methods
+    public abstract int getPenalty();
+    public abstract int getFreekick();
+    public abstract int getFinishing();
+    //Basketbolcu methods
+    public abstract int getPoint();
+    public abstract int getThreePointer();
+    public abstract int getFreeThrow();
 
     public String getName(){
         return this.name;

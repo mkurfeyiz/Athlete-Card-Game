@@ -31,6 +31,24 @@ public class Futbolcu extends Sporcu{
         return this.finishing;
     }
 
+    @Override
+    public int getPoint() {
+        int i = 0;
+        return i;
+    }
+
+    @Override
+    public int getThreePointer() {
+        int i = 0;
+        return i;
+    }
+
+    @Override
+    public int getFreeThrow() {
+        int i = 0;
+        return i;
+    }
+
     public void setFinishing(int finishing) {
         this.finishing = finishing;
     }
@@ -45,13 +63,9 @@ public class Futbolcu extends Sporcu{
 
     @Override
     public void sporcuPuaniGoster() {
-        //Alert kullan
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Futbolcu Bilgisi");
-        alert.setHeaderText(null);
-        alert.setContentText(this.name + " "+this.teamName+"\n"+"Penaltı : "+this.penalty+" \nSerbest Vuruş : "+this.freekick+" \nBitiricilik : "+this.finishing);
 
-        alert.showAndWait();
+        System.out.println("Oyuncunun Adı : "+this.name + "\nTakımı : "+this.teamName+"\n"+"Penaltı : "+this.penalty+" \nSerbest Vuruş : "+this.freekick+" \nBitiricilik : "+this.finishing);
+
     }
 
 }

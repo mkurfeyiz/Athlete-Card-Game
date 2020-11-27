@@ -21,19 +21,23 @@ public class StartPage {
     String pName;
     int pID;
 
+    Kullanici _player;
 
     public void setPlayerInfos() {
-
+        String name="MK";
+        int id=22;
         try{
 
             this.pName = playerName.getText();
             this.pID = Integer.parseInt(playerID.getText());
+            name = this.pName;
+            id = this.pID;
 
         } catch (Exception e){
-            pName = "";
-            pID = 1;
+            _player = new Kullanici();
         }
 
+        _player = new Kullanici(id,name,0);
     }
 
     public void startTheGame(ActionEvent event)throws IOException {
@@ -44,7 +48,7 @@ public class StartPage {
         Scene gameScene = new Scene(game);
         //Asagida gecis yapmak istedigimiz sayfanin controllerinin methodunu kullanarak bilgileri aktardik.
         GamePage controller = loader.getController();
-        controller.getSettings(pName,pID);
+        controller.getSettings(pName,pID,_player);
         //
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(gameScene);
